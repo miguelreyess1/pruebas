@@ -9,7 +9,7 @@ public class pruebas
         // copiarFicheroBinario();
         // convertirFicheroABinario();
         // validarCorreo();
-        buscador();
+        buscador(); // sdfg
     }
 
     public static void copiarFicheroBinario()
