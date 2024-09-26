@@ -9,7 +9,7 @@ public class pruebas
         // copiarFicheroBinario();
         // convertirFicheroABinario();
         // validarCorreo();
-        buscador(); // sdfg
+        buscador();
     }
 
     public static void copiarFicheroBinario()
@@ -83,15 +83,20 @@ public class pruebas
         String regex = "\\b" + Pattern.quote(palabraBuscada) + "\\b"; // Palabra completa
         Pattern pattern = Pattern.compile(regex);
 
-        try (BufferedReader br = new BufferedReader(new FileReader(nombreArchivo))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(nombreArchivo)))
+        {
             String linea;
-            while ((linea = br.readLine()) != null) {
+            while ((linea = br.readLine()) != null)
+            {
                 Matcher matcher = pattern.matcher(linea);
-                if (matcher.find()) {
+                if (matcher.find())
+                {
                     System.out.println(linea); // Imprime la línea si contiene la palabra buscada
                 }
             }
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
         }
     }
