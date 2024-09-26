@@ -6,9 +6,9 @@ public class pruebas
 {
     public static void main(String[] args) throws IOException
     {
-        // copiarFicheroBinario();
-        // convertirFicheroABinario();
-        // validarCorreo();
+        copiarFicheroBinario();
+        convertirFicheroABinario();
+        validarCorreo();
         buscador();
     }
 
@@ -24,10 +24,9 @@ public class pruebas
                 fos.write(buffer, 0, bytesRead);
             }
             System.out.println("El archivo se copió exitosamente.");
-        }
-        catch (IOException e)
+        } catch (IOException e)
         {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -48,9 +47,6 @@ public class pruebas
                 fos.write(byteDato);
             }
             System.out.println("Se ha escrito el contenido en formato binario en " + ficheroSalida);
-        }
-        catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -94,10 +90,8 @@ public class pruebas
                     System.out.println(linea); // Imprime la línea si contiene la palabra buscada
                 }
             }
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }
